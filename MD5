@@ -1,4 +1,4 @@
-cf0832406c30e64b2b50c49a88f970b2 *DESCRIPTION
+8977a6f699080c32d35fafd10d3b6107 *DESCRIPTION
 77d1ef6de30cbfbbb9e439c911808182 *NAMESPACE
 7e5800653994a5e09240e110e9c38bdc *R/format.R
 02ead3db9e1220ec12b09ba0631d2b27 *R/generic.R
@@ -10,10 +10,10 @@ d52f807305b3426402439e6195e871cd *R/ic.R
 13a66b105ef85ae64a525e9deb86ce40 *R/stats.R
 863a1572b988db39207329b96d5c62e9 *R/summary.R
 913208e5f1046c5fa0797f4f19318277 *R/util.R
-15fa0ccee1d4019d73516bf77552f9b1 *build/partial.rdb
+3dd01658c1123434ab061bdf14c6a960 *build/partial.rdb
 2f60cc3bea8ff78362d9917a156f7486 *data/AirPollution.rda
 9a74e8fe7f6bdc0b673668ee02f43c6b *data/IbkTemperature.rda
-194900730ffc931a426d0832a5b65ddd *inst/CITATION
+54bcaa05800c4811b3df9fd6202c707c *inst/CITATION
 7365d0c7756218ec0fad80c18e39274e *man/AirPollution.Rd
 d7ad3fd3cebe1eb1702bc5605029ac77 *man/IbkTemperature.Rd
 77e242abcdc246fd63aecbf2504fa1ea *man/image.Rd
