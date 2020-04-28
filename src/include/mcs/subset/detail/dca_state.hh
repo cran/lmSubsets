@@ -352,9 +352,9 @@ class dca_state_best : private dca_state_base<Scalar, NodeXfer>
     static_assert(
         std::is_same<
             typename cost_func_traits::signature,
-            double(int,double)
+            Scalar(int,Scalar)
         >::value,
-        "cost function must be 'double(int,double)'"
+        "cost function must be 'Scalar(int,Scalar)'"
     );
 
 
