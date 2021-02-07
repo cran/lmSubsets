@@ -3,108 +3,88 @@
 
 \alias{lmSelect}
 \alias{lmSelect.default}
-\alias{lmSelect.matrix}
-\alias{lmSelect.lmSubsets}
-\alias{lmSelect_fit}
-\alias{lmSubsets_select}
 \alias{print.lmSelect}
-\alias{plot.lmSelect}
-\alias{summary.lmSelect}
-\alias{print.summary.lmSelect}
 
 
-\title{Best-Subset Regression}
+\title{Best-subset regression}
 
 
-\description{Best-subset regression for ordinary linear models.}
+\description{
+
+  Best-variable-subset selection in ordinary linear regression.
+
+}
+
 
 \usage{
-lmSelect(formula, \ldots)
+lmSelect(formula, ...)
 
-\method{lmSelect}{default}(formula, data, subset, weights, na.action, model = TRUE,
-         x = FALSE, y = FALSE, contrasts = NULL, offset, \ldots)
-
-\method{lmSelect}{matrix}(formula, y, intercept = TRUE, \ldots)
-
-\method{lmSelect}{lmSubsets}(formula, penalty = "BIC", \ldots)
-
-lmSelect_fit(x, y, weights = NULL, offset = NULL, include = NULL,
-             exclude = NULL, penalty = "BIC", tolerance = 0,
-             nbest = 1, \ldots, pradius = NULL)
+\method{lmSelect}{default}(formula, data, subset, weights, na.action,
+         model = TRUE, x = FALSE, y = FALSE, contrasts = NULL,
+         offset, ...)
 }
 
 
 \arguments{
-  \item{formula, data, subset, weights, na.action, model, x, y, contrasts,
-    offset}{Standard formula interface.}
-  \item{intercept}{Include intercept.}
-  \item{include, exclude}{Force regressors in or out.}
-  \item{penalty}{Penalty per parameter.}
-  \item{tolerance}{Approximation tolerance.}
-  \item{nbest}{Number of best subsets.}
-  \item{\dots}{Forwarded to \code{lmSelect_fit}.}
-  \item{pradius}{Preordering radius.}
+
+  \item{formula, data, subset, weights, na.action, model, x, y,
+    contrasts, offset}{standard formula interface}
+
+  \item{...}{forwarded to \code{lmSelect_fit()}}
+
 }
 
 
 \details{
-  The \code{lmSelect} generic provides a convenient interface for best
-  variable-subset selection in linear regression: The \code{nbest} best
-  -- according to an information criterion of the AIC family -- subset
-  models are returned.
 
-  The information criterion is specified with the \code{penalty}
-  parameter.  Accepted values are \code{"AIC"}, \code{"BIC"}, or a
-  \code{numeric} value representing the penalty per model parameter (see
-  \code{\link[stats]{AIC}}).
+  The \code{lmSelect()} generic provides various methods to conveniently
+  specify the regressor and response variables.  The standard formula
+  interface (see \code{\link[=lm]{lm()}}) can be used, or the model
+  information can be extracted from an already fitted \code{"lm"}
+  object.  The model matrix and response can also be passed in directly.
 
-  A custom selection criterion may be specified by passing an R function
-  as the \code{penalty} argument.  The expected signature is
-  \code{function(size, rss)}, where \code{size} is the number of
-  predictors (including intercept, if any), and \code{rss} the residual
-  sum of squares.  The function must be non-decreasing in both
-  parameters.
+  After processing the arguments, the call is forwarded to
+  \code{\link[=lmSelect_fit]{lmSelect_fit()}}.
 
-  A low-level matrix interface is provided by \code{lmSelect_fit}.
-
-  See \code{\link{lmSubsets}} for further information.
 }
 
 
 \value{
-  An object of class \code{"lmSelect"}, i.e., a list with the following
-  components:
-  \item{nobs, nvar}{Number of observations, of variables.}
-  \item{intercept}{\code{TRUE} if model has intercept term;
-    \code{FALSE} otherwise.}
-  \item{include, exclude}{Included, excluded variables.}
-  \item{size}{Subset sizes.}
-  \item{tolerance}{Approximation tolerance.}
-  \item{nbest}{Number of best subsets.}
-  \item{submodel}{Submodel information.}
-  \item{subset}{Selected variables.}
+
+  \code{"lmSelect"}---a \code{list} containing the components returned
+  by \code{lmSelect_fit()}
 
   Further components include \code{call}, \code{na.action},
   \code{weights}, \code{offset}, \code{contrasts}, \code{xlevels},
   \code{terms}, \code{mf}, \code{x}, and \code{y}.  See
-  \code{\link[stats]{lm}} for more information.
+  \code{\link[=lm]{lm()}} for more information.
+
 }
 
 
-\references{
-  Hofmann M, Gatu C, Kontoghiorghes EJ, Colubi A, Zeileis A (2020).
-  lmSubsets: Exact Variable-Subset Selection in Linear Regression for
-  R.  \emph{Journal of Statistical Software}.  \bold{93}, 1--21.
-  doi:10.18637/jss.v093.i03.
+\seealso{
+
+  \itemize{
+
+    \item{\code{\link[=lmSelect.matrix]{lmSelect.matrix()}} for the
+      matrix interface}
+
+    \item{\code{\link[=lmSelect.lmSubsets]{lmSelect.lmSubsets()}} for
+      coercing an all-subsets regression}
+
+    \item{\code{\link[=lmSelect_fit]{lmSelect_fit()}} for the low-level
+      interface}
+
+    \item{\code{\link[=lmSubsets]{lmSubsets()}} for all-subsets
+      regression}
+
+  }
+
 }
-
-
-\seealso{\code{\link{lmSubsets}}, \code{\link{summary}},
-  \link{methods}.}
 
 
 \examples{
-## load data (with logs for relative potentials)
+## load data
 data("AirPollution", package = "lmSubsets")
 
 
@@ -115,12 +95,6 @@ data("AirPollution", package = "lmSubsets")
 ## fit 20 best subsets (BIC)
 lm_best <- lmSelect(mortality ~ ., data = AirPollution, nbest = 20)
 lm_best
-
-## equivalent to:
-\dontrun{
-lm_all <- lmSubsets(mortality ~ ., data = AirPollution, nbest = 20)
-lm_best <- lmSelect(lm_all)
-}
 
 ## summary statistics
 summary(lm_best)

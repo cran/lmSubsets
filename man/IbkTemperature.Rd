@@ -1,24 +1,33 @@
 \name{IbkTemperature}
 
 
+\docType{data}
+
+
 \alias{IbkTemperature}
 
 
-\title{Temperature Observations and Numerical Weather Predictions for Innsbruck}
+\title{Temperature observations and numerical weather predictions for
+  Innsbruck}
 
 
 \description{
-  00UTC temperature observations and corresponding 24-hour
-  reforecast ensemble means from the Global Ensemble Forecast System
-  (GEFS, Hamill et al. 2013) for SYNOP station Innsbruck Airport (11120;
-  47.260, 11.357) from 2011-01-01 to 2015-12-31.
+
+  00UTC temperature observations and corresponding 24-hour reforecast
+  ensemble means from the Global Ensemble Forecast System (GEFS, Hamill
+  et al. 2013) for SYNOP station Innsbruck Airport (11120; 47.260,
+  11.357) from 2011-01-01 to 2015-12-31.
+
 }
 
 
-\usage{data("IbkTemperature")}
+\usage{
+data(IbkTemperature)
+}
 
 
 \format{
+
   A data frame containing 1824 daily observations/forecasts for 42
   variables.  The first column (\code{temp}) contains temperature
   observations at 00UTC (coordinated universal time), columns 2--37 are
@@ -27,62 +36,129 @@
   trend/season patterns.
 
   \describe{
-    \item{temp}{Observed temperature at Innsbruck Airport (deg \eqn{C}).} 
-    \item{tp}{Total accumulated precipitation (\eqn{kg~m^{-2}}{kg m^-2}).} 
-    \item{t2m}{Temperature at 2 meters (\eqn{K}).}
-    \item{u10m}{U-component of wind at 10 meters (\eqn{m~s^{-1}}{m s^-1}).} 
-    \item{v10m}{V-component of wind at 10 meters (\eqn{m~s^{-1}}{m s^-1}).} 
-    \item{u80m}{U-component of wind at 80 meters (\eqn{m~s^{-1}}{m s^-1}).} 
-    \item{v80m}{U-component of wind at 80 meters (\eqn{m~s^{-1}}{m s^-1}).} 
-    \item{cape}{Convective available potential energy (\eqn{J~kg^{-1}}{J kg^-1}).} 
-    \item{ci}{Convective inhibition (\eqn{J~kg^{-1}}{J kg^-1}).} 
-    \item{sdlwrf}{Surface downward long-wave radiation flux (\eqn{W~m^{-2}}{W m^-2}).} 
-    \item{sdswrf}{Surface downward short-wave radiation flux (\eqn{W~m^{-2}}{W m^-2}).} 
-    \item{sulwrf}{Surface upward long-wave radiation flux (\eqn{W~m^{-2}}{W m^-2}).} 
-    \item{suswrf}{Surface upward short-wave radiation flux (\eqn{W~m^{-2}}{W m^-2}).}
-    \item{ghf}{Ground heat flux (\eqn{W~m^{-2}}{W m^-2}).} 
-    \item{slhnf}{Surface latent heat net flux (\eqn{W~m^{-2}}{W m^-2}).} 
-    \item{sshnf}{Surface sensible heat net flux (\eqn{W~m^{-2}}{W m^-2}).}
-    \item{mslp}{Mean sea level pressure (\eqn{Pa}).} 
-    \item{psfc}{Surface pressure (\eqn{Pa}).} 
-    \item{pw}{Precipitable water (\eqn{kg~m^{-2}}{kg m^-2}).}
-    \item{vsmc}{Volumetric soil moisture content (fraction).} 
-    \item{sh2m}{Specific humidity at 2 meters (\eqn{kg~kg^{-1}}{kg kg^-1}).} 
-    \item{tcc}{Total cloud cover (percent).} 
-    \item{tcic}{Total column-integrated condensate (\eqn{kg~m^{-2}}{kg m^-2}).} 
-    \item{tsfc}{Skin temperature (\eqn{K}).} 
-    \item{tmax2m}{Maximum temperature (\eqn{K}).} 
-    \item{tmin2m}{Minimum temperature (\eqn{K}).} 
-    \item{st}{Soil temperature (0-10 cm below surface) (\eqn{K}).} 
-    \item{ulwrf}{Upward long-wave radiation flux (\eqn{W~m^{-2}}{W m^-2}).}  
-    \item{wr}{Water runoff (\eqn{kg~m^{-2}}{kg m^-2}).} 
-    \item{we}{Water equivalent of accumulated snow depth (\eqn{kg~m^{-2}}{kg m^-2}).} 
-    \item{wp}{Wind mixing energy (\eqn{J}).} 
-    \item{w850}{Vertical velocity at 850 hPa surface (\eqn{Pa~s^{-1}}{Pa s^-1}).} 
-    \item{t2pvu}{Temperature on 2 PVU surface (\eqn{K}).} 
-    \item{p2pvu}{Pressure on 2 PVU surface (\eqn{Pa}).} 
-    \item{u2pvu}{U-component of wind on 2 PVU surface (\eqn{m~s^{-1}}{m s^-1}).} 
-    \item{v2pvu}{U-component of wind on 2 PVU surface (\eqn{m~s^{-1}}{m s^-1}).} 
-    \item{pv}{Potential vorticity on 320 K isentrope (\eqn{K~m^{2}~kg^{-1}~s^{-1}}{K m^2 kg^-1 s^-1}).} 
-    \item{time}{Time in years.}
-    \item{sin, cos}{Sine and cosine component of annual harmonic pattern.}
-    \item{sin2, cos2}{Sine and cosine component of bi-annual harmonic pattern.}
+
+    \item{temp}{observed temperature at Innsbruck Airport (deg \eqn{C})}
+
+    \item{tp}{total accumulated precipitation (\eqn{kg~m^{-2}}{kg
+        m^-2})}
+
+    \item{t2m}{temperature at 2 meters (\eqn{K})}
+
+    \item{u10m}{U-component of wind at 10 meters (\eqn{m~s^{-1}}{m
+        s^-1})}
+
+    \item{v10m}{V-component of wind at 10 meters (\eqn{m~s^{-1}}{m
+        s^-1})}
+
+    \item{u80m}{U-component of wind at 80 meters (\eqn{m~s^{-1}}{m
+        s^-1})}
+
+    \item{v80m}{U-component of wind at 80 meters (\eqn{m~s^{-1}}{m
+        s^-1})}
+
+    \item{cape}{convective available potential energy
+      (\eqn{J~kg^{-1}}{J kg^-1})}
+
+    \item{ci}{convective inhibition (\eqn{J~kg^{-1}}{J kg^-1})}
+
+    \item{sdlwrf}{surface downward long-wave radiation flux
+      (\eqn{W~m^{-2}}{W m^-2})}
+
+    \item{sdswrf}{surface downward short-wave radiation flux
+      (\eqn{W~m^{-2}}{W m^-2})}
+
+    \item{sulwrf}{surface upward long-wave radiation flux
+      (\eqn{W~m^{-2}}{W m^-2})}
+
+    \item{suswrf}{surface upward short-wave radiation flux
+      (\eqn{W~m^{-2}}{W m^-2})}
+
+    \item{ghf}{ground heat flux (\eqn{W~m^{-2}}{W m^-2})}
+
+    \item{slhnf}{surface latent heat net flux (\eqn{W~m^{-2}}{W
+        m^-2})}
+
+    \item{sshnf}{surface sensible heat net flux (\eqn{W~m^{-2}}{W
+        m^-2})}
+
+    \item{mslp}{mean sea level pressure (\eqn{Pa})}
+
+    \item{psfc}{surface pressure (\eqn{Pa})}
+
+    \item{pw}{precipitable water (\eqn{kg~m^{-2}}{kg m^-2})}
+
+    \item{vsmc}{volumetric soil moisture content (fraction)}
+
+    \item{sh2m}{specific humidity at 2 meters (\eqn{kg~kg^{-1}}{kg
+        kg^-1})}
+
+    \item{tcc}{total cloud cover (percent)}
+
+    \item{tcic}{total column-integrated condensate
+      (\eqn{kg~m^{-2}}{kg m^-2})}
+
+    \item{tsfc}{skin temperature (\eqn{K})}
+
+    \item{tmax2m}{maximum temperature (\eqn{K})}
+
+    \item{tmin2m}{minimum temperature (\eqn{K})}
+
+    \item{st}{soil temperature (0--10 cm below surface) (\eqn{K})}
+
+    \item{ulwrf}{upward long-wave radiation flux (\eqn{W~m^{-2}}{W
+        m^-2})}
+
+    \item{wr}{water runoff (\eqn{kg~m^{-2}}{kg m^-2})}
+
+    \item{we}{water equivalent of accumulated snow depth
+      (\eqn{kg~m^{-2}}{kg m^-2})}
+
+    \item{wp}{wind mixing energy (\eqn{J})}
+
+    \item{w850}{vertical velocity at 850 hPa surface (\eqn{Pa~s^{-1}}{Pa
+        s^-1})}
+
+    \item{t2pvu}{temperature on 2 PVU surface (\eqn{K})}
+
+    \item{p2pvu}{pressure on 2 PVU surface (\eqn{Pa})}
+
+    \item{u2pvu}{U-component of wind on 2 PVU surface (\eqn{m~s^{-1}}{m
+        s^-1})}
+
+    \item{v2pvu}{U-component of wind on 2 PVU surface (\eqn{m~s^{-1}}{m
+        s^-1})}
+
+    \item{pv}{Potential vorticity on 320 K isentrope
+      (\eqn{K~m^{2}~kg^{-1}~s^{-1}}{K m^2 kg^-1 s^-1})}
+
+    \item{time}{time in years}
+
+    \item{sin, cos}{sine and cosine component of annual harmonic
+      pattern}
+
+    \item{sin2, cos2}{sine and cosine component of bi-annual harmonic
+      pattern}
+
   }
 }
 
 
 \source{
-  Observations: \url{http://www.ogimet.com/synops.phtml.en}
 
-  Reforecasts: \url{http://www.esrl.noaa.gov/psd/forecasts/reforecast2/}
+  Observations:  \url{https://www.ogimet.com/synops.phtml.en}.
+  Reforecasts:  \url{https://psl.noaa.gov/forecasts/reforecast2/}.
+
 }
 
 
 \references{
-  Hamill TM, Bates GT, Whitaker JS, Murray DR, Fiorino M, Galarneau Jr. TJ, Zhu Y, Lapenta W (2013).
-  NOAA's Second-Generation Global Medium-Range Ensemble Reforecast Data Set.
-  \emph{Bulletin of the American Meteorological Society}, \bold{94}(10), 1553--1565.
-  \doi{10.1175/BAMS-D-12-00014.1}
+
+  Hamill TM, Bates GT, Whitaker JS, Murray DR, Fiorino M, Galarneau
+  Jr. TJ, Zhu Y, Lapenta W (2013).  NOAA's second-generation global
+  medium-range ensemble reforecast data set.  \emph{Bulletin of the
+  American Meteorological Society}, \strong{94}(10), 1553--1565.
+  \doi{10.1175/BAMS-D-12-00014.1}.
+
 }
 
 
